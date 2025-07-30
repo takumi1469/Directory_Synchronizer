@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Directory_Synchronizer": {
+      "commandName": "Project",
+      "commandLineArgs": ""
+    }
+  }
+}
