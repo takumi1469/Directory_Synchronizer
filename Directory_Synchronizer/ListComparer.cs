@@ -6,26 +6,32 @@ using System.Threading.Tasks;
 
 namespace Directory_Synchronizer
 {
-    internal class ListComparer
+    public class ListComparer
     {
         // This method compares the lists of items in folders and checks what is new and what is removed.
 
-        static public List<string> ListCompare(List<string> SourceNew, List<string> DestOld, List<string> DestNew,
+        static public List<string> ListCompare(List<string> Source, List<string> DestOld, List<string> DestNew,
             string sourcePath, string destPath)
         {
-            SourceNew = SourceNew.Select(x => x.Replace(sourcePath, "")).ToList();
+            Source = Source.Select(x => x.Replace(sourcePath, "")).ToList();
             DestOld=DestOld.Select(x=>x.Replace(destPath,"")).ToList();
             DestNew = DestNew.Select(x => x.Replace(destPath, "")).ToList();
 
             List<string> result = new List<string>();
 
-            foreach (string item in SourceNew)
+            foreach (string item in Source)
             {
                 if (DestNew.Contains(item))
                     result.Add($"{item} has been successfully copied to replica folder");
             }
-
-            foreach (string item in SourceNew)
+            foreach (string item in Source)
+            {
+                if (!DestNew.Contains(item))
+                {
+                    result.Add($"{item} was NOT copied to replica folder successfully!");
+                }
+            }
+            foreach (string item in Source)
             {
                 if (!DestOld.Contains(item))
                 {
@@ -34,7 +40,7 @@ namespace Directory_Synchronizer
             }
             foreach (string item in DestOld)
             {
-                if (!SourceNew.Contains(item))
+                if (!Source.Contains(item))
                 {
                     result.Add($"{item} has been removed since last replication.");
                 }

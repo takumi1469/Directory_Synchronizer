@@ -1,14 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO.Abstractions;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Directory_Synchronizer
 {
-    internal class Synchronizer
+    public class Synchronizer
     {
-        public static void Synchronize(DirectoryInfo dirSource, DirectoryInfo dirDest)
+        private readonly IFileSystem _fileSystem;
+        public Synchronizer(IFileSystem fileSystem)
+        {
+            _fileSystem = fileSystem;
+        }
+        public void Synchronize(IDirectoryInfo dirSource, IDirectoryInfo dirDest)
         {
             // This method copies all the files and subdirectories of given source folder to destination folder.
 
@@ -18,18 +24,18 @@ namespace Directory_Synchronizer
 
             dirDest.Create();
 
-            List<DirectoryInfo> sourceSubDirs = dirSource.GetDirectories().ToList<DirectoryInfo>();
+            List<IDirectoryInfo> sourceSubDirs = dirSource.GetDirectories().ToList<IDirectoryInfo>();
 
-            foreach (FileInfo file in dirSource.GetFiles())
+            foreach (IFileInfo file in dirSource.GetFiles())
             {
                 string filePath = Path.Combine(dirDest.FullName, file.Name);
                 file.CopyTo(filePath);
             }
 
-            foreach (DirectoryInfo subDir in sourceSubDirs)
+            foreach (IDirectoryInfo subDir in sourceSubDirs)
             {
                 string newDestSub = Path.Combine(dirDest.FullName, subDir.Name);
-                DirectoryInfo newDestSubDir = new DirectoryInfo(newDestSub);
+                IDirectoryInfo newDestSubDir = _fileSystem.DirectoryInfo.New(newDestSub);
                 Synchronize(subDir, newDestSubDir);
             }
         }

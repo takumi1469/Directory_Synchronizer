@@ -1,14 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO.Abstractions;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Directory_Synchronizer
 {
-    internal class Logger
+    public class Logger
     {
-        public static void DoLogging(string pathToDelete, string logPath, List<string> listToLog)
+        private readonly IFileSystem _fileSystem;
+        public Logger(IFileSystem fileSystem)
+        {
+            _fileSystem = fileSystem;
+        }
+        public void DoLogging(IDirectoryInfo dirLog, List<string> listToLog)
         {
             // This method logs what has been copied, newly made or removed since last replication.
 
@@ -16,13 +22,8 @@ namespace Directory_Synchronizer
             string nowDateTime = DateTime.Now.ToString("dd_MMM_yyyy HH_mm_ss");
             string logFileName = $"{nowDateTime}.txt";
 
-            // Prepare DirectoryInfo for log path
-            DirectoryInfo dirLog = new DirectoryInfo(logPath);
-            if (!dirLog.Exists)
-                dirLog.Create();
-
             // Write the logs on console and log file, together with logging datetime
-            using (StreamWriter logStreamAppend = File.CreateText(Path.Combine(logPath, logFileName)))
+            using (StreamWriter logStreamAppend = _fileSystem.File.CreateText(Path.Combine(dirLog.FullName, logFileName)))
             {
                 logStreamAppend.WriteLine(nowDateTime);
                 Console.WriteLine(nowDateTime);
@@ -33,7 +34,7 @@ namespace Directory_Synchronizer
                     Console.WriteLine(item);
                 }
             }
-
         }
+
     }
 }

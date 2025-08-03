@@ -22,11 +22,12 @@ catch (Exception ex)
     return;
 }
 
-//Make arguments object because Timer class accepts one object only as parameter for method to be called
-CommandLineArguments arguments = new CommandLineArguments(source, dest, interval, log);
+//Make Coordinator class instance with the commandline arguments
+Coordinator coordinator = new Coordinator(source, dest, interval, log);
+var autoEvent = new AutoResetEvent(false);
 
-System.Threading.Timer timer = new Timer(Coordinator.DoReplication, arguments, 0, interval * 1000);
+System.Threading.Timer timer = new Timer(coordinator.DoReplication, autoEvent, 0, interval * 1000);
 
 // wait for the Timer thread to display replication result
-var autoEvent = new AutoResetEvent(false);
 autoEvent.WaitOne();
+
