@@ -18,16 +18,18 @@ try
 catch (Exception ex)
 {
     Console.WriteLine("Invalid arguments. Enter arguments as follows, directories should be full paths:\n" +
-"replicator.exe source_directory(string) destination_directory(string) interval(int, by seconds) logging_directory(string)");
+"Directory_Synchronizer.exe <source_directory(string)> <destination_directory(string)> <interval(int, by seconds)> <logging_directory(string)>");
     return;
 }
 
-//Make Coordinator class instance with the commandline arguments
+// Make Coordinator class instance with the commandline arguments
 Coordinator coordinator = new Coordinator(source, dest, interval, log);
+
+// Make AutoResentEvent to abort synchronization when source directory doesn't exist
 var autoEvent = new AutoResetEvent(false);
 
+// Make Timer for periodic execution of synchronization
 System.Threading.Timer timer = new Timer(coordinator.DoReplication, autoEvent, 0, interval * 1000);
 
 // wait for the Timer thread to display replication result
 autoEvent.WaitOne();
-

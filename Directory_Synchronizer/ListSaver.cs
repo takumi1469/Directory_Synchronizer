@@ -18,25 +18,20 @@ namespace Directory_Synchronizer
 
         public List<string> ListSave(IDirectoryInfo dir, List<string> itemList)
         {
-            // This method makes the list of paths of files and subdirectories of given folder
+            // This method makes the list of paths of files and subdirectories of given directory
 
-            //var dir = _fileSystem.DirectoryInfo.New(path);
-            //if(dir.Exists )
-            //{
-            //    return new List<string>(["non-existent"]);
-            //}
-
-            // Make a list of DirectoryInfo for subdirectories in the replication folder 
-            List<IDirectoryInfo> destSubDirs = dir.GetDirectories().ToList<IDirectoryInfo>();
-
-            // Make a list of paths(string) of files in replication folder
+            // Make a list of paths(string) of files in the given directory
             foreach (IFileInfo file in dir.GetFiles())
             {
                 string filePath = Path.Combine(dir.FullName, file.Name);
                 itemList.Add(filePath);
             }
 
-            // Add the path of subdirectory, then call this function to recursively perform the same in all subdirectories
+            // Make a list of IDirectoryInfo for subdirectories in the given directory
+            List<IDirectoryInfo> destSubDirs = dir.GetDirectories().ToList<IDirectoryInfo>();
+
+            // Add subdirectories to the list, and call this function itself for all sub directories
+            // to recursively perform the same list-saving
             foreach (IDirectoryInfo subDir in destSubDirs)
             {
                 string newDestSub = Path.Combine(dir.FullName, subDir.Name);

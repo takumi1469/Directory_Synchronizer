@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO.Abstractions;
 using System.Linq;
 using System.Text;
@@ -16,10 +17,10 @@ namespace Directory_Synchronizer
         }
         public void DoLogging(IDirectoryInfo dirLog, List<string> listToLog)
         {
-            // This method logs what has been copied, newly made or removed since last replication.
+            // This method logs what has been copied, newly made or removed since last synchronization.
 
-            // Prepare name of log file
-            string nowDateTime = DateTime.Now.ToString("dd_MMM_yyyy HH_mm_ss");
+            // Prepare name of log file with creation datetime
+            string nowDateTime = DateTime.Now.ToString("dd_MMM_yyyy HH_mm_ss", new CultureInfo("en-US"));
             string logFileName = $"{nowDateTime}.txt";
 
             // Write the logs on console and log file, together with logging datetime

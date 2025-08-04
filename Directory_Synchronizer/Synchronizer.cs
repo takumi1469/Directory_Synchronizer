@@ -24,14 +24,19 @@ namespace Directory_Synchronizer
 
             dirDest.Create();
 
-            List<IDirectoryInfo> sourceSubDirs = dirSource.GetDirectories().ToList<IDirectoryInfo>();
-
+            // Copy files in source directory to destination directory
             foreach (IFileInfo file in dirSource.GetFiles())
             {
-                string filePath = Path.Combine(dirDest.FullName, file.Name);
-                file.CopyTo(filePath);
+                string fileDestPath = Path.Combine(dirDest.FullName, file.Name);
+                file.CopyTo(fileDestPath);
             }
 
+            // Get subdirectories in source directory
+            List<IDirectoryInfo> sourceSubDirs = dirSource.GetDirectories().ToList<IDirectoryInfo>();
+
+            // For all the subdirectories in source directory, do the following:
+            // - Make the corresponding subdirectory in destination directory
+            // - Recursively call this function to do the same copying inside the subdirectory
             foreach (IDirectoryInfo subDir in sourceSubDirs)
             {
                 string newDestSub = Path.Combine(dirDest.FullName, subDir.Name);

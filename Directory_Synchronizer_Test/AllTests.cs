@@ -5,7 +5,7 @@ using Microsoft.VisualStudio.TestPlatform.TestHost;
 
 namespace Directory_Synchronizer_Test
 {
-    //File system, directories and files are mocked for testing by using System.IO.Abstraction nuget package
+    //File system, directories and files are mocked for testing by using System.IO.Abstraction NuGet package
     public class AllTests
     {
         private MockFileSystem mockFileSystem;
@@ -22,6 +22,12 @@ namespace Directory_Synchronizer_Test
 
         public AllTests()
         {
+            // The following directory structure is simulated:
+            // C:\source
+            //        |-------- in.txt
+            //        |-------- sub1 
+            //                   |----- inSub.txt
+
             mockFileSystem = new MockFileSystem();
             mockFileData = new MockFileData("line1\nline2\nline3");
             mockFileData2 = new MockFileData("Test string");
@@ -35,6 +41,7 @@ namespace Directory_Synchronizer_Test
             dirLog = mockFileSystem.DirectoryInfo.New(logPath);
             mockFileSystem.AddDirectory(dirSource);
             mockFileSystem.AddDirectory(dirSub);
+            mockFileSystem.AddDirectory(dirLog);
             mockFileSystem.AddFile(Path.Combine(sourcePath, @"in.txt"), mockFileData);
             mockFileSystem.AddFile(Path.Combine(subPath, @"inSub.txt"), mockFileData2);
         }
@@ -73,10 +80,12 @@ namespace Directory_Synchronizer_Test
             synchronizer.Synchronize(dirSource, dirDest);
 
             //ASSERT
+            // Test that copied directories exist
             Assert.True(dirDest.Exists);
             IDirectoryInfo dirCopiedSub = mockFileSystem.DirectoryInfo.New(Path.Combine(destPath, subPath));
             Assert.True(dirCopiedSub.Exists);
 
+            // Test that copied file exists and has the same content as original file
             IFileInfo copiedFile = mockFileSystem.FileInfo.New(Path.Combine(destPath, "in.txt"));
             Assert.True(copiedFile.Exists);
             string fileContent = "";
@@ -98,17 +107,14 @@ namespace Directory_Synchronizer_Test
             List<string> SourceList = new List<string>() { @"C:\source\a.txt", @"C:\source\b.txt", @"C:\source\d.txt" };
             List<string> newDestList = new List<string>() { @"C:\dest\a.txt", @"C:\dest\d.txt" };
 
-            //sourcePath = @"C:\source";
-            //destPath = @"C:\dest";
-
             //ACT
             List<string> comparedResult = ListComparer.ListCompare(SourceList, oldDestList, newDestList, sourcePath, destPath);
 
             //ASSERT
             Assert.Contains<string>(@"\a.txt has been successfully copied to replica folder", comparedResult);
             Assert.Contains<string>(@"\b.txt was NOT copied to replica folder successfully!", comparedResult);
-            Assert.Contains<string>(@"\d.txt has been added since last replication.", comparedResult);
-            Assert.Contains<string>(@"\c.txt has been removed since last replication.", comparedResult);
+            Assert.Contains<string>(@"\d.txt has been added since last synchronization.", comparedResult);
+            Assert.Contains<string>(@"\c.txt has been removed since last synchronization.", comparedResult);
         }
 
         [Fact]
@@ -117,7 +123,6 @@ namespace Directory_Synchronizer_Test
             //Verifies that the contents of List<string> is written to a file by Logger.DoLogging
 
             //ARRANGE
-            dirLog.Create();
             List<string> listLog = new List<string>([@"\a.txt has been successfully copied to replica folder", @"\c.txt has been removed since last replication."]);
 
             //ACT

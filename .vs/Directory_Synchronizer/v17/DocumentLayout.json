@@ -7,16 +7,16 @@
       "RelativeMoniker": "D:0:0:{D9E30852-682E-4AE7-BFBE-9068C88E6E9B}|Directory_Synchronizer_Test\\Directory_Synchronizer_Test.csproj|solutionrelative:directory_synchronizer_test\\alltests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{9BBB9076-3C87-4377-BD70-BE476F964726}|Directory_Synchronizer\\Directory_Synchronizer.csproj|c:\\takumipersonal\\personalprojects\\directory_synchronizer\\directory_synchronizer\\listcomparer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9BBB9076-3C87-4377-BD70-BE476F964726}|Directory_Synchronizer\\Directory_Synchronizer.csproj|solutionrelative:directory_synchronizer\\listcomparer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{9BBB9076-3C87-4377-BD70-BE476F964726}|Directory_Synchronizer\\Directory_Synchronizer.csproj|c:\\takumipersonal\\personalprojects\\directory_synchronizer\\directory_synchronizer\\synchronizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9BBB9076-3C87-4377-BD70-BE476F964726}|Directory_Synchronizer\\Directory_Synchronizer.csproj|solutionrelative:directory_synchronizer\\synchronizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9BBB9076-3C87-4377-BD70-BE476F964726}|Directory_Synchronizer\\Directory_Synchronizer.csproj|c:\\takumipersonal\\personalprojects\\directory_synchronizer\\directory_synchronizer\\coordinator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9BBB9076-3C87-4377-BD70-BE476F964726}|Directory_Synchronizer\\Directory_Synchronizer.csproj|solutionrelative:directory_synchronizer\\coordinator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9BBB9076-3C87-4377-BD70-BE476F964726}|Directory_Synchronizer\\Directory_Synchronizer.csproj|c:\\takumipersonal\\personalprojects\\directory_synchronizer\\directory_synchronizer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9BBB9076-3C87-4377-BD70-BE476F964726}|Directory_Synchronizer\\Directory_Synchronizer.csproj|solutionrelative:directory_synchronizer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9BBB9076-3C87-4377-BD70-BE476F964726}|Directory_Synchronizer\\Directory_Synchronizer.csproj|c:\\takumipersonal\\personalprojects\\directory_synchronizer\\directory_synchronizer\\logger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -27,8 +27,8 @@
       "RelativeMoniker": "D:0:0:{9BBB9076-3C87-4377-BD70-BE476F964726}|Directory_Synchronizer\\Directory_Synchronizer.csproj|solutionrelative:directory_synchronizer\\listsaver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9BBB9076-3C87-4377-BD70-BE476F964726}|Directory_Synchronizer\\Directory_Synchronizer.csproj|c:\\takumipersonal\\personalprojects\\directory_synchronizer\\directory_synchronizer\\listcomparer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9BBB9076-3C87-4377-BD70-BE476F964726}|Directory_Synchronizer\\Directory_Synchronizer.csproj|solutionrelative:directory_synchronizer\\listcomparer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9BBB9076-3C87-4377-BD70-BE476F964726}|Directory_Synchronizer\\Directory_Synchronizer.csproj|c:\\takumipersonal\\personalprojects\\directory_synchronizer\\directory_synchronizer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9BBB9076-3C87-4377-BD70-BE476F964726}|Directory_Synchronizer\\Directory_Synchronizer.csproj|solutionrelative:directory_synchronizer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -62,7 +62,7 @@
               "RelativeDocumentMoniker": "Directory_Synchronizer_Test\\AllTests.cs",
               "ToolTip": "C:\\TakumiPersonal\\PersonalProjects\\Directory_Synchronizer\\Directory_Synchronizer_Test\\AllTests.cs",
               "RelativeToolTip": "Directory_Synchronizer_Test\\AllTests.cs",
-              "ViewState": "AQIAABYAAAAAAAAAAIAywCYAAABGAAAA",
+              "ViewState": "AQIAAHMAAAAAAAAAAAAcwH0AAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-30T17:39:52.541Z",
               "EditorCaption": ""
@@ -79,33 +79,33 @@
               "RelativeDocumentMoniker": "Directory_Synchronizer\\Logger.cs",
               "ToolTip": "C:\\TakumiPersonal\\PersonalProjects\\Directory_Synchronizer\\Directory_Synchronizer\\Logger.cs",
               "RelativeToolTip": "Directory_Synchronizer\\Logger.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAywCEAAAAsAAAA",
+              "ViewState": "AQIAABEAAAAAAAAAAAA2wBUAAAA+AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-30T17:35:06.655Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "ListComparer.cs",
               "DocumentMoniker": "C:\\TakumiPersonal\\PersonalProjects\\Directory_Synchronizer\\Directory_Synchronizer\\ListComparer.cs",
               "RelativeDocumentMoniker": "Directory_Synchronizer\\ListComparer.cs",
               "ToolTip": "C:\\TakumiPersonal\\PersonalProjects\\Directory_Synchronizer\\Directory_Synchronizer\\ListComparer.cs",
               "RelativeToolTip": "Directory_Synchronizer\\ListComparer.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAAwBUAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADIAAABUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-01T09:34:18.316Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Synchronizer.cs",
               "DocumentMoniker": "C:\\TakumiPersonal\\PersonalProjects\\Directory_Synchronizer\\Directory_Synchronizer\\Synchronizer.cs",
               "RelativeDocumentMoniker": "Directory_Synchronizer\\Synchronizer.cs",
               "ToolTip": "C:\\TakumiPersonal\\PersonalProjects\\Directory_Synchronizer\\Directory_Synchronizer\\Synchronizer.cs",
               "RelativeToolTip": "Directory_Synchronizer\\Synchronizer.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAKAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACcAAAA8AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-31T19:33:14.855Z",
               "EditorCaption": ""
@@ -118,33 +118,33 @@
               "RelativeDocumentMoniker": "Directory_Synchronizer\\ListSaver.cs",
               "ToolTip": "C:\\TakumiPersonal\\PersonalProjects\\Directory_Synchronizer\\Directory_Synchronizer\\ListSaver.cs",
               "RelativeToolTip": "Directory_Synchronizer\\ListSaver.cs",
-              "ViewState": "AQIAAAIAAAAAAAAAAAAiwBEAAAAAAAAA",
+              "ViewState": "AQIAABQAAAAAAAAAAAAcwC4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-30T18:32:09.747Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Coordinator.cs",
               "DocumentMoniker": "C:\\TakumiPersonal\\PersonalProjects\\Directory_Synchronizer\\Directory_Synchronizer\\Coordinator.cs",
               "RelativeDocumentMoniker": "Directory_Synchronizer\\Coordinator.cs",
               "ToolTip": "C:\\TakumiPersonal\\PersonalProjects\\Directory_Synchronizer\\Directory_Synchronizer\\Coordinator.cs",
               "RelativeToolTip": "Directory_Synchronizer\\Coordinator.cs",
-              "ViewState": "AQIAACMAAAAAAAAAAAAswDYAAAANAAAA",
+              "ViewState": "AQIAAEUAAAAAAAAAAAAcwFkAAABqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-30T17:31:03.681Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\TakumiPersonal\\PersonalProjects\\Directory_Synchronizer\\Directory_Synchronizer\\Program.cs",
               "RelativeDocumentMoniker": "Directory_Synchronizer\\Program.cs",
               "ToolTip": "C:\\TakumiPersonal\\PersonalProjects\\Directory_Synchronizer\\Directory_Synchronizer\\Program.cs",
               "RelativeToolTip": "Directory_Synchronizer\\Program.cs",
-              "ViewState": "AQIAABEAAAAAAAAAAAAMwCEAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACIAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-30T17:09:20.716Z",
               "EditorCaption": ""
