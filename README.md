@@ -7,18 +7,21 @@ All the files, subfolders, and all the files in the subfolders will be replicate
 The application also makes the log files to show what has been copied, what was newly created, and what was removed compared to last synchronization.
 
 ## How do you use it?
-First please publish the solution and make an executable. There are two ways to do this, A) from VisualStudio and B) dotnet CLI
+First please publish the solution and make an executable. There are two ways to do this, A) from VisualStudio and B) with dotnet CLI
+
 **A. From VisualStudio**
 1. Clone the repository
 2. Open the solution with VisualStudio
 3. Go on menu on top to Build > Publish Selection > Folder > Folder (default location is fine) > click Publish button
-**B. From dotnet CLI**
+
+**B. With dotnet CLI**
 1. Clone the repository
 2. On terminal console, move to the solution folder (Directory_Synchronizer-main\Directory_Synchronizer-main) with Directory_Synchronizer.sln in it 
 3. Run this Dotnet CLI command: dotnet publish -c Release -r win-x64 --self-contained true
+
 After publishing the solution, please run the executable as follows
 1. On console terminal, move to the following directory in the project directory of Directory_Synchronizer: Directory_Synchronizer\bin\Release\net8.0 
-2. From there, run the executable with arguments as follows: Directory_Synchronizer.exe **<source_path(string)>** **<destination_path(string)>** **<interval(int)>** **<log_path(string)>**
+2. From there, run the executable with arguments as follows: **Directory_Synchronizer.exe** **<source_path(string)>** **<destination_path(string)>** **<interval(int)>** **<log_path(string)>**
 
 ## Was AI used to develop this solution?
 AI was NOT used to develop this application for code generation. 
